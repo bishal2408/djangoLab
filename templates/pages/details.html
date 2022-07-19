@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="wrapper">
+    <div class="flex pt-xl">
+        <div class="half-width">
+            <img src="/media/{{property.cardImage}}"
+                 class="full-height full-width" alt="">
+        </div>
+        <div class="half-width pl-xl">
+            <div class="title">
+                {{property.title}}
+            </div>
+            <p class="sub-title">
+                {{property.description}}
+            </p>
+            <p class="sub-title">
+                Rs.{{property.price}} matra
+            </p>
+            <div class="flex wrap">
+                <div class="half-width sub-title">Kitchen: {{property.kitchen}}</div>
+                <div class="half-width sub-title">Hall: {{property.hall}}</div>
+                <div class="half-width sub-title">Bedroom: {{property.bedroom}}</div>
+                <div class="half-width sub-title">Road In Front: {{property.roadInFront}}</div>
+            </div>
+        </div>
+    </div>
+    <section class="advertisement bg-primary my-xl rounded" style="height:200px"></section>
+    <section class="">
+        <div class="title-md">Popular</div>
+        <div class="flex">
+            {% for prop in latest %}
+            <div class="flex-1 px-xs property-card">
+                <div class="card ">
+                    <img src="/media/{props.cardImage}" alt="" height="200">
+                    <div class="property-details">
+                        <div class="title-sm">{{ prop.title}}</div>
+                        <div class="price">Property title</div>
+                        <div class="area">Property title</div>
+                        <div class="location">Property title</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</section>
+{% endblock %}

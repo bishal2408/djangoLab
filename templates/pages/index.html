@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--    this is index {{name}}, {{age}}-->
+<!--    {% for prop in properties %}-->
+<!--        <div>{{prop.title}}</div>-->
+<!--        <div>{{prop.shortDescription}}</div>-->
+<!--        <div>{{prop.longDescription}}</div>-->
+<!--    {% endfor %}-->
+<main>
+    <h1>{{data}}</h1>
+    <section class="hero full-vh flex wrapper-x items-center">
+        <div class="text-area half-width">
+            <div class="title">Random</div>
+            <div class="sub-title">Random</div>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolor
+                perspiciatis
+                placeat velit veritatis? Alias, aliquid dicta ea expedita, ipsa laudantium magnam maxime nulla quasi
+                quibusdam quod suscipit veritatis voluptas!</p>
+            <div class="btn-area">
+                <button class="btn primary">Get Started</button>
+            </div>
+        </div>
+        <div class="image-area half-width">
+            <img src="{% static 'images/bg.png' %}" class="full-width">
+        </div>
+    </section>
+    <section class="wrapper">
+        <div class="title-md">Featured</div>
+        <div class="flex">
+            {% for prop in featured %}
+            <div class="flex-1 px-xs property-card">
+                <div class="card ">
+                    <img src="" alt="" height="200">
+                    <div class="property-details">
+                        <div class="title-sm">{{prop.title}}</div>
+                        <div class="price">{{prop.price}}</div>
+                        <div class="area">{{props.area}}</div>
+                        <div class="location">Property title</div>
+                    </div>
+                    <a class="btn primary full-width"
+                       href="{% url 'details' propertyId=prop.id %}">Inquire</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="wrapper">
+        <div class="title-md">Popular</div>
+        <div class="flex">
+            {% for prop in latest %}
+            <div class="flex-1 px-xs property-card">
+                <div class="card ">
+                    <img src="/media/{props.cardImage}" alt="" height="200">
+                    <div class="property-details">
+                        <div class="title-sm">{{ prop.title}}</div>
+                        <div class="price">Property title</div>
+                        <div class="area">Property title</div>
+                        <div class="location">Property title</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="advertisement bg-primary" style="height:200px"></section>
+    <section class="wrapper">
+        <div class="title-md">Latest</div>
+        <div class="flex">
+            {% for prop in agent_properties %}
+            <div class="flex-1 px-xs property-card">
+                <div class="card ">
+                    <img src="" alt="" height="200">
+                    <div class="property-details">
+                        <div class="title-sm">Property title</div>
+                        <div class="price">Property title</div>
+                        <div class="area">Property title</div>
+                        <div class="location">Property title</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+
